@@ -1,0 +1,502 @@
+@font-face {
+  font-family: Maax;
+  src: url("./fonts/Maax_Rounded.otf") format("opentype");
+}
+
+@font-face {
+  font-family: MaaxMono;
+  src: url("./fonts/MaaxMono-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: MontserratRegular;
+  src: url("./fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: MontserratItalic;
+  src: url("./fonts/Montserrat/static/Montserrat-Italic.ttf");
+}
+
+@font-face {
+  font-family: MontserratBold;
+  src: url("./fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  cursor: default;
+  opacity: 1 !important;
+  transition: opacity ease 0.8s;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.loadingpage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  color: white;
+  .introtext {
+    font-family: MontserratRegular;
+    .introtitle {
+      margin-bottom: 60px;
+      font-family: MontserratRegular;
+      @media screen and (max-width: 1000px) {
+        margin-bottom: 20px;
+      }
+      #logointro {
+        width: 50%;
+        max-width: 516px;
+        margin-bottom: 20px;
+        @media screen and (max-width: 1000px) {
+          width: 50%;
+          margin-bottom: 10px;
+        }
+      }
+      p {
+        @media screen and (max-width: 1000px) {
+          font-size: 12px;
+        }
+      }
+    }
+    .introdesc {
+      width: 75%;
+      margin: 0 auto;
+      margin-bottom: 100px;
+      @media screen and (max-width: 1000px) {
+        margin-bottom: 18px;
+        width: 100%;
+      }
+      h3 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        @media screen and (max-width: 1000px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width: 800px) {
+          font-size: 20px;
+        }
+      }
+      p {
+        font-family: MontserratRegular;
+        @media screen and (max-width: 1000px) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .loader {
+    opacity: 1 !important;
+    transition: opacity ease 0.8s;
+    border: 10px solid #fff;
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
+    border-radius: 50%;
+    border-top: 10px solid transparent;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  #startexperience {
+    font-family: MaaxMono;
+    padding: 10px 50px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    transition: all ease 0.8s;
+    @media screen and (max-width: 1000px) {
+      padding: 5px 15px;
+      font-size: 15px;
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 15px;
+    }
+  }
+
+  // #startexperience:hover {
+  //   background-color: white;
+  //   color: black;
+  // }
+
+  #startexperience:hover {
+    background: linear-gradient(
+      180deg,
+      #e74b4c,
+      #c8ce2e,
+      #5c7792,
+      #dea1c2,
+      #8d5234
+    );
+    background-size: 1000% 1000%;
+
+    -webkit-animation: AnimationName 15s ease infinite;
+    -moz-animation: AnimationName 15s ease infinite;
+    animation: AnimationName 15s ease infinite;
+  }
+
+  #bestonmobile {
+    display: none;
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    width: 100vw;
+    @media screen and (max-width: 800px) {
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      font-family: MontserratBold;
+      text-decoration: underline;
+      color: white;
+    }
+  }
+
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 2% 0%;
+    }
+    50% {
+      background-position: 99% 100%;
+    }
+    100% {
+      background-position: 2% 0%;
+    }
+  }
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 2% 0%;
+    }
+    50% {
+      background-position: 99% 100%;
+    }
+    100% {
+      background-position: 2% 0%;
+    }
+  }
+  @keyframes AnimationName {
+    0% {
+      background-position: 2% 0%;
+    }
+    50% {
+      background-position: 99% 100%;
+    }
+    100% {
+      background-position: 2% 0%;
+    }
+  }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+canvas.webgl {
+  opacity: 0;
+  display: block;
+  transition: opacity ease 0.8s;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  display: none;
+  position: relative;
+  z-index: 2;
+
+  .section {
+    width: 100vw;
+    height: 200vh;
+    padding-left: 100px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .section.red2 {
+    height: 100vh;
+  }
+
+  .section p {
+    display: none;
+  }
+}
+
+#wheelcolor {
+  opacity: 0;
+  transition: opacity ease 0.8s;
+  position: fixed;
+  left: calc(-150px - 90px);
+  top: calc(50% - 195px);
+  width: 390px;
+  height: 390px;
+  z-index: 1;
+  @media screen and (max-width: 800px) {
+    transform: scale(0.6);
+  }
+  #wheelcolor-circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: center center;
+  }
+}
+
+#colorinfo {
+  opacity: 0;
+  transition: opacity ease 0.8s;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transition: opacity ease 0.8s;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  #colorcode,
+  #colorname {
+    padding: 30px;
+    font-size: 30px;
+    color: white;
+    font-family: MaaxMono;
+    @media screen and (max-width: 800px) {
+      padding: 0;
+      font-size: 20px;
+    }
+  }
+}
+
+#scrolltodiscover {
+  opacity: 1;
+  transition: opacity ease 1s;
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  height: 300px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  @media screen and (max-width: 800px) {
+    bottom: 50px;
+  }
+  p {
+    color: white;
+    font-family: 15px;
+    font-family: Maax;
+  }
+}
+
+#scrollbtnsmobile {
+  display: none;
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    gap: 20px;
+  }
+  .scrollbtn {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-radius: 0px;
+    opacity: 0.5;
+    .scrollbtnicon {
+      opacity: 1;
+      fill: white;
+    }
+  }
+  .scrollbtn#scrolldown {
+    .scrollbtnicon {
+      transform: rotate(180deg);
+      position: relative;
+      top: -4px;
+      text {
+        font-size: 60px;
+        font-weight: 700;
+        font-family: MaaxMono;
+      }
+    }
+  }
+}
+
+#prompts {
+  position: fixed;
+  top: 50px;
+  opacity: 1;
+  transition: opacity ease 1s;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100vw;
+  z-index: 1;
+  p {
+    color: white;
+    font-family: 15px;
+    font-family: Maax;
+  }
+}
+
+.showcta {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  transition: opacity ease 1.5s;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  #buttons {
+    display: flex;
+    color: white;
+    gap: 30px;
+    @media screen and (max-width: 1000px) {
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+    button {
+      font-size: 18px;
+      cursor: pointer;
+      font-family: MaaxMono;
+      color: white;
+      background-color: transparent;
+      border: 1px solid white;
+      border-radius: 30px;
+      padding: 10px 50px;
+      transition: all ease 0.3s;
+      @media screen and (max-width: 800px) {
+        font-size: 15px;
+        padding: 5px 15px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        @media screen and (max-width: 800px) {
+          font-size: 12px;
+        }
+        &:hover {
+          color: black;
+        }
+      }
+      &:hover {
+        color: black;
+        background-color: white;
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+  #showctafooter {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+
+    @media screen and (max-width: 800px) {
+      position: initial;
+    }
+
+    #logocta {
+      width: 300px;
+      @media screen and (max-width: 800px) {
+        width: 30%;
+      }
+    }
+    #backtoexperience {
+      color: white;
+      text-decoration: none;
+      font-family: MontserratItalic;
+      @media screen and (max-width: 800px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.turndevice {
+  position: fixed;
+  top: 0;
+  background-color: black;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  color: white;
+  font-family: MaaxMono;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity ease 1s;
+  p {
+    margin-bottom: 20px;
+  }
+  img {
+    width: 30px;
+  }
+}
+
+.dg.ac {
+  z-index: 2 !important;
+}

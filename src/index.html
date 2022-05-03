@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://int.coloro.com/media/favicon/stores/1/favicon.png"
+    />
+    <title>5 Key Colors S/S 24</title>
+  </head>
+  <body style="opacity: 0">
+    <canvas class="webgl"></canvas>
+
+    <div class="page" style="display: none">
+      <section class="section red">
+        <p>Section 1</p>
+      </section>
+
+      <section class="section red2">
+        <p>Section 1.2</p>
+      </section>
+
+      <section class="section lime">
+        <p>Section 2</p>
+      </section>
+
+      <section class="section blue">
+        <p>Section 3</p>
+      </section>
+
+      <section class="section pink">
+        <p>Section 4</p>
+      </section>
+
+      <section class="section nutshell">
+        <p>Section 5</p>
+      </section>
+
+      <section class="section products">
+        <p>Section 5</p>
+      </section>
+    </div>
+
+    <svg id="wheelcolor" style="opacity: 0" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="Gradient" gradientUnits="userSpaceOnUse">
+          <stop id="wheelcolor0" stop-color="#C8CE2E" offset="0%" />
+          <stop id="wheelcolor1" stop-color="#C8CE2E" offset="35%" />
+          <stop id="wheelcolor2" stop-color="#E74B4C" offset="65%" />
+          <stop id="wheelcolor3" stop-color="#E74B4C" offset="100%" />
+        </linearGradient>
+      </defs>
+      <rect
+        id="wheelcolor-circle"
+        x="45"
+        y="45"
+        height="300px"
+        width="300px"
+        rx="50%"
+        ry="50%"
+        stroke-width="90"
+        fill="transparent"
+        stroke="url(#Gradient)"
+      />
+    </svg>
+
+    <div id="colorinfo" style="opacity: 0">
+      <p id="colorname">Radiant Red</p>
+      <p id="colorcode">011 - 50 - 32</p>
+    </div>
+
+    <div id="scrolltodiscover" style="opacity: 0">
+      <p>Scroll to discover</p>
+    </div>
+
+    <div id="scrollbtnsmobile" style="opacity: 0">
+      <div class="scrollbtn" id="scrollup">
+        <svg
+          class="scrollbtnicon"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 75 81"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                font-size: 60px;
+                font-family: MaaxMono;
+                font-weight: 700;
+                fill: white;
+              }
+            </style>
+          </defs>
+          <text class="cls-1" transform="translate(18.53 67.11)">^</text>
+        </svg>
+      </div>
+      <div class="scrollbtn" id="scrolldown">
+        <svg
+          class="scrollbtnicon"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 75 81"
+        >
+          <defs>
+            <style>
+              .cls-1 {
+                font-size: 60px;
+                font-family: MaaxMono;
+                font-weight: 700;
+                fill: white;
+              }
+            </style>
+          </defs>
+          <text class="cls-1" transform="translate(18.53 67.11)">^</text>
+        </svg>
+      </div>
+    </div>
+
+    <div id="prompts" style="opacity: 0">
+      <p id="prompt">Click & drag</p>
+    </div>
+
+    <div class="loadingpage">
+      <div id="bestonmobile">
+        <p>Experience created for desktop</p>
+      </div>
+      <div class="introtext">
+        <div class="introtitle">
+          <img id="logointro" src="./coloro_wgsn_white.png" />
+          <p>Present</p>
+        </div>
+        <div class="introdesc">
+          <h3>A WINDOW TO THE FUTURE OF COLOR</h3>
+          <p>Experience the key colors for S/S 24 like never before</p>
+        </div>
+      </div>
+
+      <div class="loader" style="opacity: 0"></div>
+      <button
+        id="startexperience"
+        onclick="startExperience()"
+        style="display: none"
+      >
+        Enter
+      </button>
+    </div>
+
+    <div class="showcta" style="opacity: 0">
+      <div id="buttons">
+        <button>
+          <a href="https://int.coloro.com/us/coloro-workspace" target="_blank"
+            >Coloro Workspace</a
+          >
+        </button>
+        <button>
+          <a href="https://lp.coloro.com/key-colors-ss24" target="_blank"
+            >Digital Event<br />SIGN UP</a
+          >
+        </button>
+        <button>
+          <a href="https://int.coloro.com/key-colors-ss24 " target="_blank"
+            >Buy Swatches</a
+          >
+        </button>
+      </div>
+
+      <div id="showctafooter">
+        <img id="logocta" src="./coloro_wgsn_white.png" />
+        <a id="backtoexperience" href="/">&#8592; BACK TO THE EXPERIENCE</a>
+      </div>
+    </div>
+
+    <div class="turndevice">
+      <p>ROTATE YOUR DEVICE</p>
+      <p>Experience created for desktop</p>
+      <img src="./turn_arrow.png" />
+    </div>
+
+    <video
+      id="pinkvideo"
+      autoplay
+      muted
+      playsinline
+      width="1920"
+      height="1080"
+      style="display: none"
+    >
+      <source src="./videos/pink/pink.mp4#t=0.1" type="video/mp4;" />
+    </video>
+
+    <script>
+      function startExperience() {
+        document.getElementsByClassName("webgl")[0].style.opacity = 1;
+        document.getElementById("wheelcolor").style.opacity = 1;
+        document.getElementById("colorinfo").style.opacity = 1;
+        document.getElementById("prompts").style.opacity = 1;
+        document.getElementById("scrolltodiscover").style.opacity = 1;
+        document.getElementById("scrollbtnsmobile").style.opacity = 1;
+        document.getElementById("scrollbtnsmobile").style.zIndex = 2;
+        document.getElementsByClassName("page")[0].style.display = "block";
+        document.getElementsByClassName("loadingpage")[0].style.display =
+          "none";
+      }
+    </script>
+  </body>
+</html>
